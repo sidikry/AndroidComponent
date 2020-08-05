@@ -1,36 +1,33 @@
 package com.timkontrakan.component;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.net.Uri;
-import android.os.BatteryManager;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.timkontrakan.component.databinding.ActivityMainBinding;
+
 public class MainActivity extends AppCompatActivity {
 
-    private BatteryLevelReceiver batteryLevelReceiver = new BatteryLevelReceiver();
-    private IntentFilter intentFilter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
+    private ActivityMainBinding binding;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-    }
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-    @Override
-    protected void onPostResume() {
-        super.onPostResume();
-        registerReceiver(batteryLevelReceiver, intentFilter);
-    }
-
-    @Override
-    protected void onPause() {
-        unregisterReceiver(batteryLevelReceiver);
-        super.onPause();
+        binding.btnSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final String location = binding.editQuery.getText().toString().trim();
+                Intent intent = new Intent(Intent.ACTION_VIEW,
+                        Uri.parse("geo:0,0?q=" + location));
+                startActivity(intent);
+            }
+        });
     }
 }

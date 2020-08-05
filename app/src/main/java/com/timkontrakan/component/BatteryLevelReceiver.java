@@ -19,9 +19,9 @@ public class BatteryLevelReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
 
-        TextView statusLabel = ((MainActivity) context).findViewById(R.id.statusLabel);
-        TextView statusPercentage = ((MainActivity) context).findViewById(R.id.batteryPercentage);
-        ImageView batteryImage = ((MainActivity) context).findViewById(R.id.batteryImage);
+//        TextView statusLabel = ((MainActivity) context).findViewById(R.id.statusLabel);
+//        TextView statusPercentage = ((MainActivity) context).findViewById(R.id.batteryPercentage);
+//        ImageView batteryImage = ((MainActivity) context).findViewById(R.id.batteryImage);
 
         String action = intent.getAction();
         if (action != null && action.equals(Intent.ACTION_BATTERY_CHANGED)) {
@@ -43,27 +43,27 @@ public class BatteryLevelReceiver extends BroadcastReceiver {
                     message = "Unknown";
                     break;
             }
-            statusLabel.setText(message);
-
-            //Percentage
-            int level = intent.getIntExtra(BatteryManager.EXTRA_LEVEL, -1);
-            int scale = intent.getIntExtra(BatteryManager.EXTRA_SCALE, -1);
-            int percentage = level * 100 / scale;
-            statusPercentage.setText(percentage + "%");
-
-            //Image
-            Resources resources = context.getResources();
-            if (percentage >= 90) {
-                batteryImage.setImageDrawable(resources.getDrawable(R.drawable.b100));
-            } else if (90 > percentage && percentage >= 65) {
-                batteryImage.setImageDrawable(resources.getDrawable(R.drawable.b75));
-            } else if (65 > percentage && percentage >= 40) {
-                batteryImage.setImageDrawable(resources.getDrawable(R.drawable.b50));
-            } else if (40 > percentage && percentage >= 15) {
-                batteryImage.setImageDrawable(resources.getDrawable(R.drawable.b25));
-            }else {
-                batteryImage.setImageDrawable(resources.getDrawable(R.drawable.b0));
-            }
+//            statusLabel.setText(message);
+//
+//            //Percentage
+//            int level = intent.getIntExtra(BatteryManager.EXTRA_LEVEL, -1);
+//            int scale = intent.getIntExtra(BatteryManager.EXTRA_SCALE, -1);
+//            int percentage = level * 100 / scale;
+//            statusPercentage.setText(percentage + "%");
+//
+//            //Image
+//            Resources resources = context.getResources();
+//            if (percentage >= 90) {
+//                batteryImage.setImageDrawable(resources.getDrawable(R.drawable.b100));
+//            } else if (90 > percentage && percentage >= 65) {
+//                batteryImage.setImageDrawable(resources.getDrawable(R.drawable.b75));
+//            } else if (65 > percentage && percentage >= 40) {
+//                batteryImage.setImageDrawable(resources.getDrawable(R.drawable.b50));
+//            } else if (40 > percentage && percentage >= 15) {
+//                batteryImage.setImageDrawable(resources.getDrawable(R.drawable.b25));
+//            }else {
+//                batteryImage.setImageDrawable(resources.getDrawable(R.drawable.b0));
+//            }
         }
     }
 

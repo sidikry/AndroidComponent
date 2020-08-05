@@ -6,36 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/statusLabel"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/edit_query"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:text="@string/charging"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/batteryImage"
+    <Button
+        android:id="@+id/btn_search"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:src="@drawable/b100"
-        app:layout_constraintEnd_toEndOf="@+id/statusLabel"
-        app:layout_constraintStart_toStartOf="@+id/statusLabel"
-        app:layout_constraintTop_toBottomOf="@+id/statusLabel" />
-
-    <TextView
-        android:id="@+id/batteryPercentage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/_49"
-        android:textSize="24sp"
-        android:layout_marginTop="30dp"
-        app:layout_constraintEnd_toEndOf="@+id/batteryImage"
-        app:layout_constraintStart_toStartOf="@+id/batteryImage"
-        app:layout_constraintTop_toBottomOf="@+id/batteryImage" />
+        android:text="@string/cari"
+        app:layout_constraintStart_toStartOf="@+id/edit_query"
+        app:layout_constraintTop_toBottomOf="@+id/edit_query" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

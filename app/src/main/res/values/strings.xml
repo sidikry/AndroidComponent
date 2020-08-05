@@ -2,4 +2,6 @@
     <string name="app_name">Component</string>
     <string name="charging">Charging</string>
     <string name="_49">49%</string>
+    <string name="browser">Browser</string>
+    <string name="cari">CARI</string>
 </resources>
