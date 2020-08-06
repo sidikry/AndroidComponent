@@ -4,6 +4,11 @@ android {
     compileSdkVersion 29
     buildToolsVersion "30.0.0"
 
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
     defaultConfig {
         applicationId "com.timkontrakan.component"
         minSdkVersion 21
@@ -23,6 +28,9 @@ android {
 
     viewBinding{
         enabled true
+    }
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 }
 

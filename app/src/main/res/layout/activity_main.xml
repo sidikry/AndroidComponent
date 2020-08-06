@@ -6,19 +6,35 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/edit_query"
-        android:layout_width="match_parent"
+    <TextView android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textSize="20sp"
+        android:text="@string/prompt"
+        android:gravity="center"
+        android:layout_marginTop="7dp"/>
 
-    <Button
-        android:id="@+id/btn_search"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/cari"
-        app:layout_constraintStart_toStartOf="@+id/edit_query"
-        app:layout_constraintTop_toBottomOf="@+id/edit_query" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom">
+
+        <ImageButton
+            android:background="@drawable/btn_background"
+            android:id="@+id/addButton"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="end"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="20dp"
+            android:elevation="1dp"
+            android:contentDescription="@string/add_button_content_description"
+            android:src="@drawable/icon_add"
+            android:onClick="findAddress"/>
+
+    </LinearLayout>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
